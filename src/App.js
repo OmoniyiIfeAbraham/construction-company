@@ -4,19 +4,26 @@ import Services from './components/services';
 import Projects from './components/projects';
 
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import ScrollToTop from './components/scrollToTop';
+
+import BasicSlider from './components/BasicSlider';
+
+
 
 function App() {
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
       <div className="">
+        <BasicSlider />
+        {/* <ScrollToTop />
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/projects" element={<Projects />} />
-        </Routes>
+        </Routes> */}
       </div>
-    </BrowserRouter>
+    // </BrowserRouter>
   );
 }
 

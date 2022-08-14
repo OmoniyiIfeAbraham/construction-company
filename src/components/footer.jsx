@@ -1,5 +1,9 @@
 import React from 'react'
 
+import { HashLink } from 'react-router-hash-link'
+
+import {Link} from 'react-router-dom'
+
 import {Helmet} from 'react-helmet'
 import {RiHome2Line, RiLayoutMasonryLine, RiBankLine, RiHomeLine} from 'react-icons/ri'
 import { IoExtensionPuzzleOutline } from 'react-icons/io5'
@@ -8,7 +12,7 @@ import {FiSmartphone, FiMail} from 'react-icons/fi'
 function Footer() {
   return (
     <div>
-        <div className='w-full h-auto grid md:grid-cols-3 md:px-10'>
+        <div className='w-full h-auto grid md:grid-cols-3 md:px-10' id='contact'>
             <div className='w-full/3 h-[700px] md:h-[400px] grid'>
               <div className='w-full h-full/4 flex justify-center md:justify-start px-5'>
                 <h2 className='text-amber-700/50 text-5xl font-semibold self-center'>Contact Us</h2>
@@ -47,12 +51,12 @@ function Footer() {
             </div>
             <div className='w-full/3 h-[700px] md:h-[400px] grid justify-center md:justify-end md:pr-10 pt-32 md:pt-16 md:pb-20'>
                 <ul className='pb-10 px-40 md:px-0'>
-                    <li className='text-amber-700/50 text-1xl'>Home</li>
-                    <li className='text-amber-700/50 text-1xl'>Services</li>
-                    <li className='text-amber-700/50 text-1xl'>Projects</li>
-                    <li className='text-amber-700/50 text-1xl'>Contact</li>
+                    <HashLink to='/#home' smooth><li className='text-amber-700/50 text-1xl'>Home</li></HashLink>
+                    <Link to='/services'><li className='text-amber-700/50 text-1xl'>Services</li></Link>
+                    <Link to='/projects'><li className='text-amber-700/50 text-1xl'>Projects</li></Link>
+                    <HashLink to='/#contact' smooth><li className='text-amber-700/50 text-1xl'>Contact</li></HashLink>
                 </ul>
-                <button className='px-0 md:px-12 md:py-3 text-black font-thin uppercase text-2xl bg-amber-700/50' id='btn2'>call now</button>
+                <button className='px-0 md:px-12 md:py-3 text-black font-thin uppercase text-2xl bg-amber-700/50' id='btn2'><a href='tel:09032825450'>call now</a></button>
                 <p className='text-amber-700/50 text-1xl self-center md:hidden'>&#169; 2023 by Newel Residential Remodeling. Proudly created with <a href='#'>Wix.com</a></p>
             </div>
             <div className='w-full h-[100px]'></div>

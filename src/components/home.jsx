@@ -1,4 +1,9 @@
-import React from 'react'
+import React, {useRef} from 'react'
+
+import {Link} from 'react-router-dom'
+
+import { HashLink } from 'react-router-hash-link'
+
 
 // import bgImg from './../assets/background.webp'
 import twoPeps from './../assets/home-two-men.webp'
@@ -18,6 +23,8 @@ import {RiHome2Line, RiLayoutMasonryLine, RiBankLine, RiHomeLine} from 'react-ic
 import { IoExtensionPuzzleOutline } from 'react-icons/io5'
 import {FiSmartphone, FiMail} from 'react-icons/fi'
 
+
+
 function Home() {
   return (
     <div>
@@ -29,7 +36,7 @@ function Home() {
       </div> */}
 
       <div>
-        <div className='px-auto pt-80'>
+        <div className='px-auto pt-80' id='home'>
           <h2 className='text-5xl pt-50 text-white font-bold text-center z-0 relative'>Newel Residential Remodeling</h2>
           <h3 className='text-3xl text-white py-6 text-center z-0 relative'>Recreating Dream Homes That Last</h3>
         </div>
@@ -45,7 +52,7 @@ function Home() {
                   <li className='text-white font-normal text-1xl pb-0'>Home Interior</li>
                   <li className='text-white font-normal text-1xl pb-0'>Flooring</li>
                 </ul>
-                <button className='uppercase px-24 py-4 bg-amber-700/50 mt-10 ml-10'>more info</button>
+                <Link to='/services'><button className='uppercase px-24 py-4 bg-amber-700/50 mt-10 ml-10'>more info</button></Link>
             </div>
             <div className='w-full h-[700px] border border-amber-700/50' id='two-peps'>
               <img className='w-full h-[100%] object-cover' src={twoPeps} alt="" />
@@ -112,34 +119,44 @@ function Home() {
             <div className='w-full h-auto grid xl:grid-cols-2 md:px-10'>
               <div className='w-full/2 h-auto xl:h-[500px] grid md:grid-cols-2'>
                 <div className='w-full/2 h-[700px] xl:h-[500px] grid md:pr-10 flex'>
-                  <div className='w-full h-[420px] xl:h-[300px] self-start' id='test'>
-                    <img className='w-full h-[100%] object-cover' src={homeOne} alt="20131 Grove Street" />
-                    <h5 className='text-black text-2xl font-thin'>20131 Grove Street</h5>
-                  </div>              
+                  <HashLink to='/projects#gro' smooth>
+                    <div className='w-full h-[420px] xl:h-[300px] self-start' id='test'>
+                      <img className='w-full h-[100%] object-cover' src={homeOne} alt="20131 Grove Street" />
+                      <h5 className='text-black text-2xl font-thin'>20131 Grove Street</h5>
+                    </div> 
+                  </HashLink>
+                  <HashLink to='/projects#nel' smooth>            
                   <div className='w-full h-[210px] xl:h-[150px] self-end' id='test'>
                     <img className='w-full h-[100%] object-cover' src={homeTwo} alt="The Nelson's Project" />
                     <h5 className='text-black text-2xl font-thin'>The Nelson's Project</h5>
                   </div>
+                  </HashLink> 
                 </div>
                 <div className='w-full/2 h-[700px] xl:h-[500px] grid md:pl-5 md:pr-8 flex'>
+                  <HashLink to='/projects#gro' smooth>
                   <div className='w-full h-[280px] xl:h-[200px] self-start pt-10 md:pt-0' id='test'>
                     <img className='w-full h-[100%] object-cover' src={homeThree} alt="20131 Grove Street" />
                     <h5 className='text-black text-2xl font-thin'>20131 Grove Street</h5>
                   </div>
+                  </HashLink>
+                  <HashLink to='/projects#nel' smooth>
                   <div className='w-full h-[350px] xl:h-[250px] self-end' id='test'>
                     <img className='w-full h-[100%] object-cover' src={homeFour} alt="The Nelson's Project" />
                     <h5 className='text-black text-2xl font-thin'>The Nelson's Project</h5>
                   </div>
+                  </HashLink>
                 </div>
               </div>
+              <HashLink to='/projects#jef' smooth>
               <div className='w-full/2 h-[500px] pt-10 xl:pt-0' id='test'>
                 <img className='w-full h-[100%] object-cover' src={homeFive} alt="The Jefferson's Lake House" />
                 <h5 className='text-black text-2xl font-thin'>The Jefferson's Lake House</h5>
               </div>
+              </HashLink>
             </div>
 
             <div className='flex w-full h-52 justify-center'>
-              <button className='self-center px-24 py-6 bg-amber-700/50 uppercase text-2xl font-thin'>view all</button>
+              <Link to='/projects'><button className='self-center px-24 py-6 bg-amber-700/50 uppercase text-2xl font-thin'>view all</button></Link>
             </div>
 
           </div>
@@ -164,7 +181,7 @@ function Home() {
             </div>
           </div>
 
-          <Footer />
+          <Footer id='contact' />
 
         </div>
       </div>
