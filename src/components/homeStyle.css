@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#Parallax {
+    width: 100%;
+    height: 900px;
+    background-color: black;
+    background-image: url('/src/assets/background.webp');
+    background-size: cover;
+    position: absolute;
+}
+
+#sub {
+    width: 100%;
+    height: 900px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* #two-peps {
+    background-image: url('/src/assets/home-two-men.webp');
+    object-fit: cover;
+    background-size: cover;
+} */
+
+#test {
+    display: inline-block;
+    position: relative;
+    transition: .3s;
+}
+
+#test:hover img{
+    filter: blur(5px) brightness(100%);
+    /* box-shadow: 0 0 16px rgb(213, 217, 217); */
+}
+
+#test :not(img){
+    position: absolute;
+    /* z-index: -1; */
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    color: black;
+    opacity: 0;
+    transition: .3s;
+}
+
+/* #test h5{
+    top: 50%;
+    right: 50%;
+} */
+
+#test:hover :not(img){
+    opacity: 1;
+}
